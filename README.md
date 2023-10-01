@@ -1,6 +1,6 @@
 # ReporterGUI
 <p align="center">
-<img style="display: block; margin: 0px auto" src="https://github.com/itpao25/ReporterGUI/assets/7759757/ed885841-c75e-443b-aab2-8097247a20e3" />
+<img style="display: block; margin: 0px auto" src="https://github.com/itpao25/ReporterGUI/assets/7759757/49e63380-fe87-4e4d-ad3e-c1551581f82d" />
 </div>
 
 ReporterGUI provides a comprehensive solution for user reports, offering versatile management options. It can handle various report types seamlessly through a user-friendly GUI or in-game commands.
@@ -18,4 +18,3 @@ This software is released under the copyleft license AGPL-3.0. Under this licens
 ## Support
 To receive support for the plugin, you must acquire the premium version on Spigot: https://www.spigotmc.org/resources/reportergui.8596/
 
-![deb91b3f9b221b354353a96510b7499cdb7541f7](https://github.com/itpao25/ReporterGUI/assets/7759757/49e63380-fe87-4e4d-ad3e-c1551581f82d)
