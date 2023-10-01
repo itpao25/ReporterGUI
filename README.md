@@ -1,5 +1,6 @@
 # ReporterGUI
 <p align="center">
+  
 <img style="display: block; margin: 0px auto" src="https://github.com/itpao25/ReporterGUI/assets/7759757/ed885841-c75e-443b-aab2-8097247a20e3" />
 </div>
 
