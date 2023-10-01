@@ -1,0 +1,121 @@
+# Messages.yml
+message:
+    prefix: '&b[&9ReporterGUI&b]'
+    reloadcomplete: '&aReload complete'
+    playernotonline: The player was not found
+    use-command-invalid-arg: '&bUse &3/report <name player> &bto report a player'
+    use-command-invalid-arg-cli: '&bUse &3/reportcli <name player> <reason> &bto report a player without gui.'
+    report-success: '&aYou have successfully sent the report. Thanks for the support :)'
+    hover-message-success: 'Click here to see the report #[id]'
+    hover-message-success-bungeecord: 'Click here to go in the server [server]!'
+    playerexempt: '&cYou can not report this player!'
+    database-not-enable: 'This function is disabled!'
+    nopermission: '&cNo permission'
+    playerequal: You can not report yourself!
+    report-not-found: 'This report does not exist!'
+  
+    # Status update
+    report-solved-use: '&bUse &3[command] &bfor solve a report'
+    report-solved: 'The report [id] has been solved!'
+    report-solved-already: 'The report [id] is already set as solved!'
+    report-declined-use: '&bUse &3[command] &bfor decline a report'
+    report-declined: 'The report [id] has been declined!'
+    report-declined-already: 'The report [id] is already declined!'
+    report-open: 'The report [id] has been reopened!'
+    report-open-already: 'The report [id] is already open!'
+    report-open-use: '&bUse &3[command] &bfor reopen a report'
+    report-duplicate: 'The report [id] has been set as duplicated!'
+    report-duplicate-already: 'The report [id] is already in status duplicated!'
+    report-duplicate-use: '&bUse &3[command] &bfor set status as duplicated'
+    report-expired: 'The report [id] has been set as expired!'
+    report-expired-already: 'The report [id] is already in status expired!'
+    report-expired-use: '&bUse &3[command] &bto expire a report'
+    
+    # Notes
+    note-addsuccess: 'Note inserted successfully (ID [id], Report #[id_report])'
+    note-delsuccess: 'Note deleted successfully'
+    note-delerror: 'This note does not exist!'
+    note-no-permission: '&cYou can not interact with this note'
+    note-list-layout: '&7#&b[id] &3- [nickname] : &b[text]'
+    
+    # List (Command /reportergui list [-sall] [page])
+    list-title: 'List of reports'
+    list-layout: '&7#[id] &bReported: [reported] &3- [reason] ([time]) &b([status]&b)'
+    list-layout-general: '&7#[id] &bReported: &3[reason] ([time]) &b([status]&b)'
+    list-footer: '&8------ &7([current]/[totpage])&8 ----- Found &7[totalreport] &8report(s)'
+    list-not-found-forserver: '&bNo reports found for this server, can you try &3[command-list]&b ?'
+    list-not-found: 'No reports found!'
+    list-title-own: 'List of your reports'
+  
+    # Info reports (Command /reportergui view-id <id>)
+    info-report-title: 'Information for report &3#[id]'
+    info-report-id: '   &6id: &e[id]'
+    info-report-reported: '   &6player reported: &e[reported]'
+    info-report-reason: '   &6reason: &e[reason]'
+    info-report-reportedby: '   &6reported by: &e[reportedby]'
+    info-report-time: '   &6time: &e[time] - ([ago])'
+    info-report-autoexpire: '   &6expiry time: &e[time] - ([ago])'
+    info-report-reported-group: '   &6group reported: &e[group]'
+    info-report-reportedby-group: '   &6group reporter: &e[group]'
+    # use [var] only if is set to true "multi-server-enable", in config.yml
+    info-report-server: '   &6server: &e[server] [var]'
+    info-report-same: '(this server)'
+    info-report-reportedworld: '   &6in world: &e[world]'
+    info-report-status: '   &6status: &e[status]'
+    
+    info-report-notes-title: '   &bList of notes for report #[id]'
+    info-report-notes-layout: '      &7#&b[id] &3- [nickname] : &b[text]'
+    info-report-note-nexts: '      &b... more (use [command]&b)'
+    info-report-notpermission: "&cYou can't view info of this report!"
+    
+    # Search
+    search-invalid-command: '&bUse &3[command] &bto search a report contains a words'
+    search-title: "Searching report with word '[word]' "
+    search-result: '&8------ &7([current]/[totpage])&8 ----- Found &7[totalreport] &8report(s) for this search'
+  
+    # Player join
+    message-onjoin:
+        to-player:
+            enable: true
+            message: '&eYou have [num] report(s) still open'
+        to-staff:
+            enable: true
+            message: 'Joined [player] on the server, there are [num] reports waiting on him. Click to see them'
+        message-hover: 'Click here for see all report of [player]'
+        
+    # History 
+    history-title: 'History reports - [pos]'
+    history-invalid-command: '&bUse &3[command] &bto see the history of reports'
+    history-time:
+        today: 'today'
+        yesterday: 'yesterday'
+        week: 'this week'
+        month: 'this month'
+       
+    # Tp player
+    tp-invalid-command: '&bUse &3[command] &bto teleport in the report coords'
+    tp-report-notvalid: '&cThe selected report is not valid!'
+    tp-success: '&eTeleported where a report [id] was executed.'
+  
+    # Status string
+    status-open: '&eOpen'
+    status-declined: '&cDeclined'
+    status-solved: '&aSolved'
+    status-duplicated: '&dDuplicated'
+    status-expired: '&6Expired'
+    
+    # Chat notify
+    status-update-messages:
+        send-notify-reporter: '&eYour report &7#[id] &ehas changed to [new_status]'
+        send-notify-staff: '&eReport &7#[id] &ehas changed to [new_status]'
+    notes-update-messages:
+        send-newnote-staff: '&eReport &7#[id] &ehas a new note by [name]. &7#[id_note]: &6[text_note]'
+        send-newnote-reporter: '&eYour report &7#[id] &ehas a new note. &7#[id_note]: &6[text_note]'
+        
+    # Force suggestion addnote
+    force-suggestion-alert: '&eYour report is going to be sent. You need to add a comment to your note'
+    force-suggestion-wizard: '&cPlease type in chat the text of your comment and press "enter":'
+    
+    # Notify command
+    notify-enabled-message: '&2Notifications are now turned on'
+    notify-disabled-message: '&eNotifications are now turned off'

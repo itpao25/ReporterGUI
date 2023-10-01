@@ -1,0 +1,244 @@
+#   ReporterGUI
+#   Report player with using GUI
+#   by itpao25 - Contact: tropaolo@gmail.com
+#   SHORT INSTRUCTION:
+#   Use the following variables in the various commands:
+#       %playertarget% -> View the nickname of the player reported
+#       %fromplayer%  -> Player who sent the report
+#       %motivation% -> Reasons for the report
+#   Use the plugin PlaceHolderAPI for many variables (placeholder)!
+#   https://www.spigotmc.org/resources/placeholderapi.6245/
+#   Use the id of item or name type: http://minecraft-ids.grahamedgecombe.com/
+#   Possibility to insert meta data: http://minecraft.gamepedia.com/Data_values
+#   Use the enchantament following this page: http://minecraft.gamepedia.com/Enchanting
+#   (format es. KNOCKBACK, 2 : when "2" is the level of enchant)
+#   Symbol - Use the hax code (Unicode Character) - Your server must support UTF-8 for proper operation
+#   list: http://www.fileformat.info/info/unicode/index.htm :
+#   es: http://www.fileformat.info/info/unicode/char/2581/index.htm
+#   GUI size option:
+#     1 -> 9 Slot
+#     2 -> 18 Slot
+#     3 -> 27 Slot
+#     4 -> 36 Slot
+#     5 -> 45 Slot
+#     6 (Max) -> 54 Slot
+#   Use the "multi-sever-enable: true" to have support to different servers using the same database and tables
+#   The name of the server you will need to use the web interface
+# // Do not touch this //
+version: 2
+debug: false
+exempt-op: false
+multi-sever-enable: true
+server-name: "default"
+take-server-name-server-properties: false
+gui:
+    size: 3
+    name: '&4Report player %playertarget%'
+    name-without-player: '&4Report general problem'
+    cooldowntime: 60
+    cooldown-message: '&cYou must wait another &6<timeleft> &cseconds to report another player'
+    send-message-staff-success: true
+    message-staff-success: '%playertarget% it was reported by %fromplayer% for %motivation%'
+    message-staff-success-genericreason: '%fromplayer% reported a problem: %motivation%'
+    message-staff-success-offline: '%playertarget% player offline it was reported by %fromplayer% for %motivation%'
+    send-command-success: false
+    command-success: helpop %playertarget% it was reported by %fromplayer% for %motivation
+    item:
+        use-killaura:
+            slot: 0
+            motivation: Usage killaura
+            action: report
+            name: '&c&o&lUsing killaura'
+            lore:
+            - ''
+            - '&c>&9>&c> &2&oReport this player for use killaura'
+            - '&2>&f>&c> &2&oSegnala questo player per utilizzo di killaura'
+            - '&9>&f>&c> &2&oSignaler ce joueur pour une utilisation killaura'
+            - '&r&c(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)(X)'
+            - ''
+            - '&9&oKillaura: &r&9Automatically hit/attack any players'
+            - '&9or mobs within the range of the player.'
+            enchant: KNOCKBACK, 2
+            id: 347
+            amout: 0
+        player-spam:
+            slot: 2
+            motivation: Spam in chat
+            action: report
+            name: '&b&o&lSpamming in chat'
+            permission: 'Reportergui.use'
+            lore:
+            - ''
+            - '&c>&9>&c> &2&oReport this player for spam'
+            - '&2>&f>&c> &2&oSegnala questo plauer per spam'
+            - '&9>&f>&c> &2&oSignaler ce joueur pour une spam'
+            id: 19
+            amout: 0
+        grief-player:
+            slot: 4
+            motivation: 'grief in the world (%world_from%)'
+            action: report
+            save-coords: true
+            force-suggestion-addnote: true
+            name: '&e&o&lReport a grief'
+            lore:
+            - ''
+            - '&c>&9>&c> &2&oReport a grief by player in this world'
+            - '&2>&f>&c> &2&oSegnala un grief in questo mondo'
+            - '&9>&f>&c> &2&oSignaler une grief dans ce monde'
+            itemtype: TNT
+            amout: 0
+        grief-general:
+            slot: 5
+            motivation: 'grief in the world (%world_from%)'
+            action: report
+            save-coords: true
+            report-general: true
+            name: '&e&o&lReport a grief'
+            lore:
+            - ''
+            - '&c>&9>&c> &2&oReport a grief in the world'
+            - '&2>&f>&c> &2&oSegnala un grief in questo mondo'
+            - '&9>&f>&c> &2&oSignaler une grief dans ce monde'
+            itemtype: TNT
+            amout: 0
+        close:
+            slot: 26
+            action: close
+            name: '&c&lClose'
+            lore:
+            - '&cBack to the game'
+            id: '35:14'
+            amout: 0
+
+general-option:
+    # Command reportcli must save the coordinates?
+    reportcli-save-coords: false
+
+# Chat filter
+chat-filter:
+    enable: true
+    word:
+    - 'hack'
+    - 'ban please'
+    message-replace: 'Use the reporting system player, try /report <name player>'
+    block-message: false
+
+# Mysql connection
+mysql:
+    enable: true
+    username: root
+    password: hellohello
+    hostname: localhost
+    port: 3306
+    namedatabase: ReporterGUI?useSSL=false
+
+# symbols that need to be replaced in messages
+symbol:
+- (X),\u2581
+
+# Timestamp for report storage
+timestamp: "yyyy/MM/dd HH:mm:ss"
+
+# Set multi-sever-enable=true ( in the first few lines of the file ) and set server-name
+bungeecord:
+    enable: false
+    # Insert name of server bungeecord, for multiple use commas (hub, faction, survivalgames) or use:
+    # ALL for all server
+    # ONLINE for server bungeecord online
+    # Variable: %servername% -> Server name , %playertarget% -> player reported, %motivation% -> reason of report
+    send-message-server: ALL
+    message: '&b[&3%servername%&b] Report: %playertarget% it was reported by %fromplayer% for %motivation%'
+    message-general: '&b[&3%servername%&b] %fromplayer% reported a problem %motivation%'
+
+# Support for bungeecord
+redisbungee:
+    enable: false
+    send-message-server: ALL
+    message: '&b[&3%servername%&b] Report: %playertarget% it was reported by %fromplayer% for %motivation%'
+    message-general: '&b[&3%servername%&b] %fromplayer% reported a problem %motivation%'
+
+# Custom command - Setting you custom command!
+# Remember NOT TO include the slash (/)
+command-custom:
+    # Command /report in default
+    report: report
+    # Command /reportergui in default
+    reportergui: reportergui
+    # Command /reportcli
+    reportcli: reportcli
+
+# Support for Telegram
+telegram:
+    enable: false
+    id-bot:
+    chat-id:
+    # Variable - [from], [to], [reason], [worldfrom], [worldto], [server]
+    message:
+    - 'Player reported [to]'
+    - 'by [from]'
+    - 'for [reason]'
+    # General report
+    message-general:
+    - 'Problem reported by [from]'
+    - 'reason: [reason]'
+
+# Support for Slack
+slack:
+    enable: false
+    # Uri: example https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX
+    uri: 'https://hooks.slack.com/services/T00000000/B00000000/XXXXXXXXXXXXXXXXXXXXXXXX'
+    name-bot: 'ReporterGUI'
+    channel: '#general'
+    icon_emoji: ''
+    message:
+    - 'Player reported [to]'
+    - 'by [from]'
+    - 'for [reason]'
+    # General report
+    message-general:
+    - 'Problem reported by [from]'
+    - 'reason: [reason]'
+
+# Support for Disocrd
+discord:
+    enable: false
+    # Token: example MjQyNzUzNDI4Nzk3Nzg0MDY1.CvlBRQ.UiZrHBy-MU_OnVKzwj8czAsQqCc
+    token_bot: ''
+    # Chat id: example 150294479213953024
+    channel: ''
+    message:
+    - 'Player reported [to]'
+    - 'by [from]'
+    - 'for [reason]'
+    # General report
+    message-general:
+    - 'Problem reported by [from]'
+    - 'reason: [reason]'
+
+# Notify - report change status
+# messages can edit from file messages.yml
+status-update-messages:
+    enable: true
+    # send message to staff
+    send-notify-staff: true
+    # send message to the player that have create the report
+    send-notify-reporter: true
+
+# Notify - note manager update
+notes-update-messages:
+    enable: true
+    # send message to staff
+    send-newnote-staff: true
+    # send message to the player that have create the report
+    send-newnote-reporter: true
+    
+# Task to check expired reports
+task-expire-time:
+    enable: true
+    # time to check all active reports (in minutes)
+    delay: 5
+
+# vault support
+vault:
+    enable: true

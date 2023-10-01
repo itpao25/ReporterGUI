@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" output="target/classes" path="src">
+		<attributes>
+			<attribute name="optional" value="true"/>
+			<attribute name="maven.pomderived" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/Paolo Trombini/Documents/repository_eclipse/mysql-connector-java-5.1.38.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Paolo Trombini/Documents/repository_eclipse/PlaceholderAPI-2.11.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Paolo Trombini/Documents/repository_eclipse/ProtocolLib.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Paolo Trombini/Documents/repository_eclipse/spigot-1.7.10-SNAPSHOT-b1657.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Paolo Trombini/Documents/repository_eclipse/Vault.jar"/>
+	<classpathentry kind="output" path="target/classes"/>
+</classpath>

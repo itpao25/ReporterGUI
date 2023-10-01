@@ -1,0 +1,7 @@
+name: ReporterGUI
+main: it.itpao25.NMSReport.Main
+version: 1.8.5
+description: System for report a player
+author: itpao25
+website: http://itpao25.ovh/ReporterGUI
+softdepend: [PlaceholderAPI, Vault]
